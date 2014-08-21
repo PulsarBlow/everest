@@ -1,0 +1,13 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Alain Mereaux
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, Javascript
+    jQuery, require.js, Everest.js
+    Grunt, Jasmine, Jekyll
+
