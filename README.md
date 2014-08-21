@@ -1,5 +1,5 @@
-# EverestJs website
+# Everest.js website
 
-This is the presentation website for Everest.js  
+This is the presentation website for Everest.js - A REST API javascript client for the browser
 
-https://pulsarblow.github.io/everest.js
+### [Everest.js](https://github.com/PulsarBlow/everest.js)
