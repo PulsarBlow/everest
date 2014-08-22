@@ -1,0 +1,273 @@
+// =================================
+// VARIABLES
+// =================================
+@color-theme-1: #293540;
+@color-theme-2: #79BDE0;
+@color-theme-3: #FF530D;
+@color-theme-4: #E1EBF5;
+@color-theme-5: #FFFFFF;
+@font-family-base: Arial, Helvetica, sans-serif;
+@font-family-open: 'Teko', sans-serif;
+
+// =================================
+// GENERAL
+// =================================
+body {
+  background-color: @color-theme-4;
+}
+
+h1, h2, h3, h4 {
+  font-family: @font-family-open;
+  color: @color-theme-1;
+}
+
+a {
+  color: @color-theme-2;
+  &:hover, &:active, &:focus, &:visited {
+    color: @color-theme-2;
+  }
+}
+
+// =================================
+// BUTTONS
+// =================================
+.btn-default {
+  background-color: @color-theme-3;
+  color: @color-theme-5;
+
+  &:active, &:visited {
+    color: @color-theme-5;
+  }
+
+  &:hover, &:focus {
+    background-color: darken(@color-theme-3, 10%);
+    color: @color-theme-4;
+  }
+}
+
+.btn-primary {
+  background-color: @color-theme-2;
+  color: @color-theme-5;
+
+  &:active, &:visited {
+    color: @color-theme-5;
+  }
+
+  &:hover, &:focus {
+    background-color: darken(@color-theme-2, 10%);
+    color: @color-theme-5;
+  }
+}
+
+.btn-info {
+  background-color: @color-theme-1;
+  color: @color-theme-4;
+
+  &:active, &:visited {
+    color: @color-theme-4;
+  }
+
+  &:hover, &:focus {
+    background-color: lighten(@color-theme-1, 5%);
+    color: @color-theme-5;
+  }
+}
+
+// =================================
+// HELPERS
+// =================================
+.text-muted {
+
+}
+.text-primary {
+
+}
+.text-success {
+
+}
+.text-info {
+
+}
+.text-warning {
+
+}
+.text-danger {
+
+}
+.bg-primary {
+
+}
+.bg-success {
+
+}
+.bg-info {
+
+}
+.bg-warning {
+
+}
+.bg-danger {
+
+}
+
+// =================================
+// ALERTS
+// =================================
+.alert-info {
+  color: @color-theme-4;
+  background-color: @color-theme-1;
+  border-color: @color-theme-1;
+
+  .fa, .fa-border {
+    color: @color-theme-3;
+    border-color: @color-theme-3;
+  }
+}
+
+// =================================
+// NAVIGATION
+// =================================
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  background-color: @color-theme-2;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: lighten(@color-theme-2, 15%);
+  color: @color-theme-5;
+}
+
+
+// =================================
+// HEADER
+// =================================
+header {
+  .navbar-default {
+    background-color: @color-theme-4;
+    color: @color-theme-1;
+
+    .home & {
+      color: @color-theme-3;
+      background-color: @color-theme-1;
+    }
+
+    .navbar-brand, .navbar-nav > li > a {
+      color: @color-theme-1;
+
+      &:hover, &:focus {
+        color: @color-theme-5;
+      }
+
+    }
+
+    .navbar-toggle, .navbar-toggle:focus {
+      background-color: @color-theme-1;
+      .icon-bar {
+        background-color: @color-theme-2;
+      }
+    }
+
+    .navbar-toggle:hover {
+      background-color: @color-theme-3;
+
+      .icon-bar {
+        background-color: @color-theme-5;
+      }
+    }
+
+    .navbar-collapse, .navbar-form {
+      border-color: @color-theme-1;
+    }
+  }
+}
+
+// =================================
+// FOOTER
+// =================================
+footer {
+
+  .home & {
+    color: @color-theme-4;
+    background-color: @color-theme-1;
+  }
+
+  .page & {
+    color: @color-theme-4;
+    background-color: @color-theme-1;
+  }
+}
+
+// =================================
+// JUMBOTRON
+// =================================
+.jumbotron {
+  background-color: @color-theme-1;
+  color: @color-theme-4;
+  h1, h2, h3, h4, h5 {
+    color: @color-theme-5;
+  }
+}
+
+// =================================
+// LOGO
+// =================================
+.logo-container {
+  svg {
+    .mountain {
+      fill: @color-theme-3;
+    }
+    .pike {
+      fill: @color-theme-5;
+    }
+  }
+}
+
+// =================================
+// RIBBONS
+// =================================
+.ribbon {
+  &.ribbon-primary {
+    background-color: @color-theme-3;
+    color: @color-theme-4;
+  }
+  &.ribbon-secondary {
+    background-color: @color-theme-2;
+    color: @color-theme-1;
+  }
+  &.ribbon-ternary {
+    background-color: @color-theme-1;
+    color: @color-theme-3;
+  }
+}
+
+// =================================
+// HOME
+// =================================
+.home {
+  body& {
+    background-color: @color-theme-4;
+  }
+}
+
+// =================================
+// PAGE
+// =================================
+.page {
+
+  /*header {
+    .navbar-default {
+      background-color: @color-theme-1 ;
+    }
+  }*/
+
+  .page-header {
+    background-color: @color-theme-1;
+    color: @color-theme-4;
+
+    .page-title {
+      color: @color-theme-3;
+    }
+  }
+}

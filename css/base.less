@@ -1,0 +1,145 @@
+// =================================
+// GENERAL
+// =================================
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: @footer-height + (@footer-height/2);
+}
+
+// =================================
+// BUTTONS
+// =================================
+.btn {
+  border-radius: 0;
+  border: 0;
+}
+
+// =================================
+// ALERTS
+// =================================
+// ...
+
+// =================================
+// NAVIGATION
+// =================================
+// ...
+
+// =================================
+// HEADER
+// =================================
+header {
+  .navbar {
+    margin: 0;
+  }
+
+  // Navigation
+  .navbar-default {
+    border: none;
+    border-radius: 0;
+
+    .navbar-toggle, .navbar-toggle:focus {
+      border: 0;
+    }
+
+    .navbar-brand {
+      font-family: @font-family-open;
+      font-size: 1.25em;
+      font-weight: 600;
+    }
+  }
+}
+
+// =================================
+// FOOTER
+// =================================
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: @footer-height;
+  text-align: center;
+
+  .footer-text {
+    margin-top: 1em;
+    .center-block;
+  }
+
+  ul {
+    li {
+      display: inline;
+      padding-right: 3px;
+      padding-left: 3px;
+    }
+  }
+}
+
+// =================================
+// JUMBOTRON
+// =================================
+.jumbotron {
+  text-align: center;
+
+  .btn-group {
+    margin-top: 2em;
+  }
+
+  .jumbo-sub-header {
+    font-size: 1.5em;
+  }
+}
+
+// =================================
+// LOGO
+// =================================
+.logo-container {
+  width: 30%;
+  margin: auto;
+
+  svg {
+    width: 100%;
+  }
+}
+
+// =================================
+// RIBBONS
+// =================================
+// ...
+
+// =================================
+// HOME
+// =================================
+// ...
+
+// =================================
+// PAGE
+// =================================
+.page {
+  .page-header {
+    margin: 0;
+    padding: 3em 0 2em 0;
+
+    .page-title {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .page-content {
+    padding: 2em 0;
+  }
+}
+
+// =================================
+// MISCELLANEOUS
+// =================================
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}

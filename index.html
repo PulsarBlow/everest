@@ -1,54 +1,43 @@
 ---
-layout: default
-body_class: "home"
-title: Everest.js &sdot; A REST API javascript client for the browser
+layout: home
 ---
 
 <div class="jumbotron">
     <div class="container">
         <h1 class="jumbo-header">EVEREST.JS</h1>
         <div class="logo-container">
-            <svg version="1.1" class="logo" viewBox="0 0 512 320">
-<polygon class="mountain" points="0,320 320,320 160,96 "/>
-<polygon class="pike" points="288,0 210.301,111.344 359.344,320 512,320 "/>
-</svg>
+            <svg version="1.1" viewBox="0 0 512 320">
+                <polygon class="mountain" points="0,320 320,320 160,96 "/>
+                <polygon class="pike" points="288,0 210.301,111.344 359.344,320 512,320 "/>
+            </svg>
         </div>
         <h3>A REST API javascript client for the browser</h3>
         <div class="btn-group">
-            <a href="{{site.data.github.download_url}}" class="btn btn-lg btn-secondary"><i class="fa fa-download"></i> Download Everest</a>
+            <a href="{{site.data.github.download_url}}" class="btn btn-lg btn-primary"><i class="fa fa-download"></i> Download Everest</a>
         </div>
         <h6 class="text-color-theme-5">Currently <strong>v<span>{{site.data.github.version}}</span></strong></h6>
     </div>
 </div>
 <div class="container">
-    <h2>How to use ?</h2>
+    <h2>An example is worth a thousand words</h2>
     <div>
-        <pre class="highlight javascript"><code>
-// Create a REST client
-var restClient = ê.createRestClient({ host: "api.github.com", useSSL: true })
-    .withHeader("Authorization", "token OAUTH-TOKEN")
-    .withQueryStringParam("page", 3);
-
-// Read a REST resource
-restClient.read("/repos/PulsarBlow/everest.js/releases")
-    .then(function(response) {
-        // Do something with the returned REST resource
-    }, function() {
-        // Handle the read failure
+<pre class="highlight javascript">
+<code>var restClient = ê.createRestClient({ host: "api.github.com", useSSL: true })
+    .withHeader("Authorization", "token OAUTH-TOKEN")                           // Send my authorization token with all requests
+    .withQueryStringParam("per_page", 5)                                        // Display 5 items per page with all requests
+    .read("/repos/PulsarBlow/everest.js/releases", { page: 2 })                 // Get page 2 of my github releases
+    .then(function(releases) {                                                  // Then handle the returned json
+        // ...
+    }, function() {                                                             // or handle the failure
+        // ...
     });
 
-// Partialy update a REST resource
-var partial = { name: "My super new roxing release name" };
-restClient.partialUpdate("/repos/PulsarBlow/everest.js/releases/123", partial);
+// Everest even supports partial updates
+var partialRelease = { description : "Hey guys! Dang, forgot to describe my release @_@" };
+restClient.partialUpdate("/repos/PulsarBlow/everest.js/releases/123", partialRelease);
 </code></pre>
     </div>
-    <div class="alert alert-info">
-        <i class="fa fa-quote-left pull-left fa-border"></i>
-        <strong>Pro.tip</strong> Everest can be used as an AMD module with a module loader like <a href="http://requirejs.org">Require.js</a>. See the <a href="{{site.baseurl}}/samples/sample-amd.html">AMD sample for details</a>
-    </div>
-    <h2>What else ?</h2>
-    <div>
-        <p>Everest provides other usefull features such as a low level HttpClient, a URL parser, some type checkers, pre-conditions guards and other miscellaneous utility functions</p>
-        <p>Read the <a href="{{site.baseurl}}/documentation">documentation</a> for a complete API overview.</p>
+    <div style="text-align: center;margin-top:2em;">
+        <a href="{{site.baseurl}}/getting-started" class="btn btn-info btn-lg">Getting-started <i class="fa fa-arrow-circle-o-right"></i></a>
     </div>
 </div>
