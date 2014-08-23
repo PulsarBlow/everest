@@ -179,11 +179,8 @@
             domain: "everest.js",
             themes: {
                 "theme1": {
-//                    background: "#293540",
-//                    foreground: "E1EBF5",
-//                    size: 11
-                    background: "#79BDE0",
-                    foreground: "#293540",
+                    background: "#293540",
+                    foreground: "#E1EBF5",
                     size: 11
                 }
             }
