@@ -1,5 +1,5 @@
 // =================================
-// VARIABLES
+// VARIABLES & MIXINS
 // =================================
 @color-theme-1: #293540;
 @color-theme-2: #79BDE0;
@@ -8,6 +8,10 @@
 @color-theme-5: #FFFFFF;
 @font-family-base: Arial, Helvetica, sans-serif;
 @font-family-open: 'Teko', sans-serif;
+
+.inset-text(@bg-color) {
+
+}
 
 // =================================
 // GENERAL
@@ -32,20 +36,6 @@ a {
 // BUTTONS
 // =================================
 .btn-default {
-  background-color: @color-theme-3;
-  color: @color-theme-5;
-
-  &:active, &:visited {
-    color: @color-theme-5;
-  }
-
-  &:hover, &:focus {
-    background-color: darken(@color-theme-3, 10%);
-    color: @color-theme-4;
-  }
-}
-
-.btn-primary {
   background-color: @color-theme-2;
   color: @color-theme-5;
 
@@ -56,6 +46,20 @@ a {
   &:hover, &:focus {
     background-color: darken(@color-theme-2, 10%);
     color: @color-theme-5;
+  }
+}
+
+.btn-primary {
+  background-color: @color-theme-3;
+  color: @color-theme-5;
+
+  &:active, &:visited {
+    color: @color-theme-5;
+  }
+
+  &:hover, &:focus {
+    background-color: darken(@color-theme-3, 10%);
+    color: @color-theme-4;
   }
 }
 
@@ -145,13 +149,13 @@ a {
 // =================================
 header {
   .navbar-default {
-    background-color: @color-theme-4;
+    background-color: @color-theme-2;
     color: @color-theme-1;
 
-    .home & {
-      color: @color-theme-3;
-      background-color: @color-theme-1;
-    }
+    /*.home & {
+      color: @color-theme-1;
+      background-color: @color-theme-3;
+    }*/
 
     .navbar-brand, .navbar-nav > li > a {
       color: @color-theme-1;
@@ -205,7 +209,17 @@ footer {
 .jumbotron {
   background-color: @color-theme-1;
   color: @color-theme-4;
-  h1, h2, h3, h4, h5 {
+  h1, h3 {
+    text-shadow: #000000 0px 0px 2px;
+    //text-shadow: lighten(@color-theme-1, 90%) -1px 0px 0px;
+    //color: rgba(red(@color-theme-3),green(@color-theme-3),blue(@color-theme-3), 0.8);
+    //text-shadow: 0px 1px 2px lighten(@color-theme-1, 25%);
+  }
+  h1 {
+    color: @color-theme-3;
+    //color: rgba(red(@color-theme-3),green(@color-theme-3),blue(@color-theme-3), 0.8)
+  }
+  h2, h3, h4, h5 {
     color: @color-theme-5;
   }
 }
@@ -269,5 +283,9 @@ footer {
     .page-title {
       color: @color-theme-3;
     }
+  }
+
+  h3 {
+    color: @color-theme-3;
   }
 }

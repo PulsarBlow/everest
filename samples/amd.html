@@ -1,0 +1,56 @@
+---
+layout: page
+script_sample: amd
+title: Documentation &sdot; Everest.js
+---
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">AMD module sample</h1>
+
+        <p class="lead">Using Everest as an AMD module</p>
+    </div>
+</section>
+<section class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div role="form">
+                    <div class="form-group">
+                        <label for="host">Api Host</label>
+                        <input type="text" class="form-control" id="host" placeholder="eg. api.github.com"
+                               data-bind="value: host">
+                    </div>
+                    <div class="form-group">
+                        <label for="resourcePath">Resource Path</label>
+                        <input type="text" class="form-control" id="resourcePath" placeholder="eg. /repos/PulsarBlow/everest.js"
+                               data-bind="value: resourcePath">
+                    </div>
+                    <button type="button" class="btn btn-primary" data-bind="enable: canPost, click: readResource">Execute</button>
+                    <i id="loader" class="fa fa-refresh fa-spin hidden"></i>
+                </div>
+                <pre class="pre-scrollable highlight" style="margin-top:20px;height:250px;" data-bind="text: result"></pre>
+            </div>
+            <div class="col-md-6">
+                <h3>Introduction</h3>
+
+                <p>This sample is demonstrating how to use Everest REST API client in the browser, using an AMD module loader (<a href="http://requirejs.org">require.js</a> in that case). If you use an AMD-module loader, this is the way to use Everest.</p>
+
+                <p class="alert alert-info"><i class="fa fa-quote-left pull-left fa-border"></i> EverestJs is also usable as a <a href="{{site.baseurl}}/samples/sample-global.html">global variable</a>.</p>
+
+                <h3>Key concepts</h3>
+
+                <p>This sample triggers a call to the github api after creating a new RestClient. The call result
+                    is displayed in the panel under the form.</p>
+
+                <p>Open your browser javascript console and check the source to see what is going on under the hood.</p>
+                <ul>
+                    <li>Shows how to set up your script references</li>
+                    <li>Shows how to configure require.js</li>
+                    <li>Shows how to create a new Rest client</li>
+                    <li>Shows how to trigger an api read request (GET) and handle the response</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>

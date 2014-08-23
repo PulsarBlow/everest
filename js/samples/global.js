@@ -1,25 +1,26 @@
-define(["jquery", "knockout", "everest"], function($, ko, ê){
-   "use strict";
-
-    var defaultBaseUrl = "https://api.github.com",
-        defaultResourcePath = "/repos/PulsarBlow/everestjs",
+(function ($, ko, ê) {
+    var host = "api.github.com",
+        defaultResourcePath = "/repos/PulsarBlow/everest.js/releases",
         $loader,
-        restApi = new ê.RestApiClient({
-            baseUrl: defaultBaseUrl,
-            useCache: true
+        restApi = ê.createRestClient({
+            host: host,
+            useSSL: true     // Set SSL on because github requires it
         });
 
     function ViewModel() {
-        this.baseUrl = ko.observable(defaultBaseUrl);
+        this.host = ko.observable(host);
         this.resourcePath = ko.observable(defaultResourcePath);
         this.result = ko.observable("");
+        this.canPost = ko.computed(function(){
+            return this.host() && this.resourcePath()
+        }, this);
     }
 
     ViewModel.prototype.readResource = function () {
         var that = this;
 
-        // Reset the baseUrl (in case your changed it in the input field)
-        restApi.setConfiguration({baseUrl: that.baseUrl()});
+        // Reset the host (in case your changed it in the input field)
+        restApi.setConfiguration({host: that.host()});
 
         // Triggers the read and handles the outcome
         $loader.removeClass("hidden");
@@ -27,6 +28,8 @@ define(["jquery", "knockout", "everest"], function($, ko, ê){
             .done(function (data) {
                 that.result(JSON.stringify(data));
                 console.log("ResApiClient read success", data);
+
+                // Highlight response
                 $('pre.highlight').each(function (i, block) {
                     hljs.highlightBlock(block);
                 });
@@ -42,10 +45,9 @@ define(["jquery", "knockout", "everest"], function($, ko, ê){
 
     $(document).ready(function () {
         $loader = $("#loader");
-        // Databinds the viewModel. Just some Knockout stuff here, nothing related
-        // to EverestJs
+        // ViewModel data binding.
+        // Just some Knockout stuff here, nothing related to EverestJs
         ko.applyBindings(new ViewModel());
-        // Highlight code
 
     });
-});
+})(window.jQuery = window.jQuery || {}, window.ko = window.ko || {}, window.ê = window.ê || {});

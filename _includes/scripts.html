@@ -3,8 +3,24 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.3.1/holder.min.js"></script>
-<script src="{{site.baseurl}}/bower_components/everest/dist/everest.min.js"></script>
 <script src="{{site.baseurl}}/js/main.js"></script>
+
+{% if page.script_sample == "global" %}
+<script src="{{site.baseurl}}/bower_components/everest/dist/everest.min.js"></script>
+<script src="{{site.baseurl}}/js/samples/global.js"></script>
+{% elsif page.script_sample == "amd" %}
+<script>
+    var require = {
+        paths: {
+            "jquery": "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min",
+            "knockout": "//oss.maxcdn.com/knockout/3.1.0/knockout",
+            "everest": "{{site.baseurl}}/bower_components/everest/lib/everest"
+        }
+    };
+</script>
+<script data-main="{{site.baseurl}}/js/samples/amd.js" src="//oss.maxcdn.com/requirejs/2.1.14/require.min.js"></script>
+{% else %}
+{% endif %}
 <script>
     (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
