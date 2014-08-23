@@ -3,8 +3,8 @@ layout: home
 ---
 
 <div class="jumbotron">
-    <div class="container">
-        <h1 class="jumbo-header">EVEREST.JS</h1>
+    <div itemscope itemtype="http://schema.org/SoftwareApplication" class="container">
+        <h1 itemprop="name" class="jumbo-header">EVEREST.JS</h1>
         <div class="logo-container">
             <svg version="1.1" viewBox="0 0 512 320">
                 <polygon class="mountain" points="0,320 320,320 160,96 "/>
@@ -13,7 +13,7 @@ layout: home
         </div>
         <h3>A REST API javascript client for the browser</h3>
         <div class="btn-group">
-            <a href="{{site.data.github.download_url}}" class="btn btn-lg btn-primary"><i class="fa fa-download"></i> Download Everest</a>
+            <a itemprop="downloadUrl" href="{{site.data.github.download_url}}" class="btn btn-lg btn-primary"><i class="fa fa-download"></i> Download Everest</a>
         </div>
         <h6>Currently <strong>v<span>{{site.data.github.version}}</span></strong></h6>
     </div>
