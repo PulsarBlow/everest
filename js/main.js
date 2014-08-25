@@ -171,10 +171,12 @@
     };
 
     $(document).ready(function () {
+        // Highlight
         hljs.configure({tabReplace: "    ", languages: ["bash", "html", "js"]});
         $('pre code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
+        // Holder
         Holder.run({
             domain: "everest.js",
             themes: {
@@ -184,6 +186,21 @@
                     size: 11
                 }
             }
-        })
+        });
+        // GA
+        $("body").on('click', "a.tracker", function(){
+            var data = $(this).data();
+            if(!ga || typeof ga !== "function" || !data) { return; }
+            ga("send", {
+                "hitType": "event",
+                "eventCategory": "link",
+                "eventAction": "download",
+                "eventLabel": data.trackerLabel,
+                "eventValue": {
+                    "nonInteraction": 1,
+                    data: data.trackerData
+                }
+            });
+        });
     });
 }(window.jQuery, window.ko, window.ê);

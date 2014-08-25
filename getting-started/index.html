@@ -40,7 +40,7 @@ title: Getting started &sdot; Everest.js
                 <p>Once loaded in your page, Everest exports itself as a global variable :
                     <code>window.everest</code> or the cooler shortcut <code>window.ê</code></p>
                 <div class="alert alert-info" role="alert">
-                    <i class="fa fa-quote-left pull-left fa-border"></i> Everest can be used as an AMD module with a module loader like <a href="http://requirejs.org">Require.js</a>. See the <a href="{{site.baseurl}}/samples/sample-amd.html">AMD sample for details</a>
+                    <i class="fa fa-quote-left pull-left fa-border"></i> Everest can be used as an AMD module with a module loader like <a href="http://requirejs.org">Require.js</a>. See the <a href="{{site.baseurl}}/samples/amd.html">AMD sample for details</a>
                 </div>
                 <h4>REST Client</h4>
 
@@ -154,7 +154,7 @@ restClient.partialUpdate("/repos/PulsarBlow/releases/504659", {
                         <p>Compiled and minified JavaScript. No docs or original source files are included.</p>
 
                         <div class="">
-                            <a href="{{site.data.github.download_url}}" class="btn btn-lg btn-block btn-default"><i class="fa fa-download"></i>
+                            <a href="{{site.data.github.download_url}}" class="btn btn-lg btn-block btn-default tracker" data-trackerLabel="release" data-trackerData="getting-started:{{site.data.github.version}}"><i class="fa fa-download"></i>
                                 Download Everest</a>
                         </div>
                         <h6 class="">Currently <strong>v<span>{{site.data.github.version}}</span></strong></h6>
@@ -167,7 +167,7 @@ restClient.partialUpdate("/repos/PulsarBlow/releases/504659", {
                         <p>If you haven't already, download the source code for Everest.</p>
 
                         <div class="">
-                            <a href="{{site.data.github.sourcecode_url}}" class="btn btn-lg btn-block btn-default"><i class="fa fa-download"></i>
+                            <a href="{{site.data.github.sourcecode_url}}" class="btn btn-lg btn-block btn-default tracker" data-trackerLabel="source" data-trackerData="getting-started:{{site.data.github.version}}"><i class="fa fa-download"></i>
                                 Source code</a>
                         </div>
                     </div>
