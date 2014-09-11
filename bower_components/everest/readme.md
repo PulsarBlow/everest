@@ -11,7 +11,7 @@ A REST Api javascript client for the browser.
 
 Everest simplifies the way you implement asynchronous HTTP communications in your project, and particularly when you are communicating with a RESTful API.
 
-Everest provides a REST API client abstraction, an HTTP client abstraction and a set of useful features you can reuse accross your project (url parser, types validators, pre-conditions guards, string manipulation, UUID utilities).
+Everest provides a REST API client abstraction, an HTTP client abstraction and a set of useful features you can reuse accross your project (url parser, types checkers, pre-conditions guards, string manipulation, UUID manipulation).
 
 ## Installation
 
@@ -39,7 +39,7 @@ Reference jQuery and Everest in your page
 
 ```html
 <script src="/path/to/jquery" />
-<script src="/path/to/everestjs" />
+<script src="/path/to/everest.min.js" />
 ```
 
 ## Usage
@@ -51,11 +51,12 @@ It is built on top of jQuery and thus requires the reference to the jquery libra
 If you want to use Everest as an AMD mobule, see the section below.
 
 ```javascript
-var restApi = new ê.RestApiClient({
-  baseUrl: "api.github.com",
+var restClient = ê.createRestClient({
+  host: "api.github.com",
+  useSSL: true // required by github api
 });
 
-restApi.read("/repos/PulsarBlow/everestjs")
+restClient.read("/repos/PulsarBlow/everestjs")
   .done(function(data) {
     // Do something with data
   }).fail(function() {
@@ -84,11 +85,12 @@ You can also use Everest as an AMD module (with [RequireJS](http://requirejs.org
 define(["everest"], function(ê) {
   "use strict";
   
-  var restApi = ê.RestApiClient({
-    baseUrl: "api.github.com"
+  var restClient = ê.createRestClient({
+    baseUrl: "api.github.com",
+    useSSL: true // required by github api
   });
   
-  restApi.read("/repos/PulsarBlow/everestjs")
+  restClient.read("/repos/PulsarBlow/everestjs")
     .done(function(data) {
       console.log("resource read successful", data);
     })
@@ -101,11 +103,12 @@ define(["everest"], function(ê) {
 ```
 ## Documentation
 
-Read the [full documentation](http://pulsarblow.github.io/everestjs) to learn about all the details.
+Read the [full documentation](http://pulsarblow.github.io/everest.js) to learn about all the details.
 
 ## Development
 
-To contribute to the repository or run the test you will need [node.js](http://nodejs.org) (> 0.8) and git
+To run the test you will need [node.js](http://nodejs.org) (> 0.8) and git
+Tests are run with Jasmine and PhantomJS
 
 ```
 $ git clone https://github.com/PulsarBlow/everestjs
@@ -114,8 +117,6 @@ $ cd everestjs
 $ npm install
 $ bower install
 ```
-
-To build the library and run the unit tests. Tests are run with Jasmine and PhantomJS
 
 ```
 $ grunt

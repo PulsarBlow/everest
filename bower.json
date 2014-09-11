@@ -1,6 +1,6 @@
 {
   "name": "everest.website",
-  "version": "1.1.0-alpha",
+  "version": "1.1.1-alpha",
   "homepage": "https://pulsarblow.github.io/everest.js",
   "authors": [
     "PulsarBlow <pulsarblow@gmail.com>"
@@ -19,6 +19,6 @@
     "tests"
   ],
   "devDependencies": {
-    "everest": "~1.1.0-alpha"
+    "everest": "~1.1.1-alpha"
   }
 }
